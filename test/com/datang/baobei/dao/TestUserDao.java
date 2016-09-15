@@ -20,6 +20,10 @@ public class TestUserDao {
 	private UserDao userDao;
 	
 	@Test
+	public void testFindAll(){
+		userDao.findAll();
+	}
+	@Test
 	public void testSave(){
 		User user=new User();
 		user.setName("张三");
@@ -31,6 +35,11 @@ public class TestUserDao {
 		userDao.add(user);
 		System.out.println("测试添加人员成功");
 	}
-	
+//	@Test
+//	public void testSave10(){
+//		for(int i=0;i<9;i++){
+//			testSave();
+//		}
+//	}
 }
 

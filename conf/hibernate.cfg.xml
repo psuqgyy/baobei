@@ -26,9 +26,12 @@
 
 		<!-- 设置读取数据表记录的事务隔离级别 -->
 		<property name="hibernate.connection.isolation">2</property>
-
-		<!-- 配置管理session的方式 <property name="hibernate.current_session_context_class">thread</property> -->
-
+		
+		<!-- 
+		 单元测试的时候必须取消这条配置
+		   配置管理session的方式
+		 <property name="hibernate.current_session_context_class">thread</property> -->
+		
 
 		<!-- 配置对于那些类启用的二级缓存 <class-cache usage="read-write" class=""/> -->
 		<mapping class="com.datang.baobei.entities.User" />

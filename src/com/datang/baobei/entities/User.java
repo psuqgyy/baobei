@@ -4,6 +4,7 @@ import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -43,7 +44,7 @@ public class User {
 	@JoinColumn(name = "store_id")  
 	private Group group;
 	/**一个员工有多个端口号**/
-	@OneToMany
+	@OneToMany(fetch=FetchType.EAGER)
 	private Set<Port> ports;
 	
 	public Set<Port> getPorts() {
