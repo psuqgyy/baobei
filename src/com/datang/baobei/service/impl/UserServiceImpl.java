@@ -10,7 +10,7 @@ import com.datang.baobei.dao.UserDao;
 import com.datang.baobei.entities.User;
 import com.datang.baobei.service.UserService;
 
-@Service
+@Service("userService")
 public class UserServiceImpl implements UserService{
 
 	@Resource(name="userDao")
