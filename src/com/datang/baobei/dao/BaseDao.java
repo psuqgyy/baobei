@@ -10,7 +10,11 @@ import com.datang.baobei.util.Pagination;
 
 
 public interface BaseDao<T> {
-
+	/**
+	 * 查找所有实体
+	 * @return 查找结果
+	 */
+	public  List<T> findAll(); 
     /**
      * 保存实体
      * 

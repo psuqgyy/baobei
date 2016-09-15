@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.transaction.TransactionConfiguration;
 
-import com.datang.baobei.entities.UserInfo;
+import com.datang.baobei.entities.User;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations={"classpath*:applicationContext.xml"})
@@ -21,7 +21,7 @@ public class TestUserDao {
 	
 	@Test
 	public void testSave(){
-		UserInfo user=new UserInfo();
+		User user=new User();
 		user.setName("张三");
 		user.setPassword("asdfasdfasdf");
 		user.setPhone("123123123123");

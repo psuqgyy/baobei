@@ -1,6 +1,7 @@
 package com.datang.baobei.entities;
 
-import javax.persistence.CascadeType;
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 
@@ -17,8 +19,8 @@ import javax.persistence.Table;
  *
  */
 @Entity
-@Table(name="userinfo")
-public class UserInfo {
+@Table(name="user")
+public class User {
 	/**ID*/
 	@Id
 	@Column(name="id") 
@@ -35,10 +37,19 @@ public class UserInfo {
 	/**公司职务*/
 	private String position;
 	/**员工所在店铺*/
-	@ManyToOne(cascade=CascadeType.MERGE)
-	@JoinColumn(name = "store_id",insertable=false,updatable=false)  
-	private Store store;
+	@ManyToOne
+	@JoinColumn(name = "store_id")  
+	private Group group;
+	/**一个员工有多个端口号**/
+	@OneToMany
+	private Set<Port> ports;
 	
+	public Set<Port> getPorts() {
+		return ports;
+	}
+	public void setPorts(Set<Port> ports) {
+		this.ports = ports;
+	}
 	public int getId() {
 		return id;
 	}
@@ -76,11 +87,11 @@ public class UserInfo {
 	public void setPosition(String position) {
 		this.position = position;
 	}
-	public Store getStore() {
-		return store;
+	public Group getGroup() {
+		return group;
 	}
-	public void setStore(Store store) {
-		this.store = store;
+	public void setGroup(Group group) {
+		this.group = group;
 	}
 	
 }

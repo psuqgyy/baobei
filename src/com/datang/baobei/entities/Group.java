@@ -2,7 +2,6 @@ package com.datang.baobei.entities;
 
 import java.util.Set;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,33 +11,33 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-
 /**
- * 员工店铺表
+ * 店铺下面的组
  * @author Administrator
  *
  */
 @Entity
-@Table(name="store")
-public class Store {
+@Table(name="group")
+public class Group {
 
-	/**ID*/
+	/**ID**/
 	@Id
-	@Column(name="id") 
-	@GeneratedValue(strategy=GenerationType.AUTO) 
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
-	/**店铺名字*/
+	/**小组名字**/
 	private String name;
-	/**店铺区域 */
-	private String region;
+	/**小组所有的员工**/
 	@OneToMany
-	@JoinColumn(name="store_id")
-	private Set<Group> groups;
+	@JoinColumn(name="group_id")
+	private Set<User> user;
+	/**小组所在的店铺**/
+	@ManyToOne
+	private Store store;
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
-		this.id = id; 
+		this.id = id;
 	}
 	public String getName() {
 		return name;
@@ -46,17 +45,17 @@ public class Store {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getRegion() {
-		return region;
+	public Set<User> getUser() {
+		return user;
 	}
-	public void setRegion(String region) {
-		this.region = region;
+	public void setUser(Set<User> user) {
+		this.user = user;
 	}
-	public Set<Group> getGroups() {
-		return groups;
+	public Store getStore() {
+		return store;
 	}
-	public void setGroups(Set<Group> groups) {
-		this.groups = groups;
+	public void setStore(Store store) {
+		this.store = store;
 	}
 
 	
