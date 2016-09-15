@@ -19,33 +19,34 @@ public class UserDaoImpl extends BaseDaoImpl<User> implements UserDao{
 
 	
 	@Override
-	public void UserAdd(User user) {
+	public void add(User user) {
 		// TODO Auto-generated method stub
-		save(user);
+		super.save(user);
 	}
 
 	@Override
-	public void UserDel(int userid) {
+	public void delete(int userid) {
 		// TODO Auto-generated method stub
-		delete(userid);
+		super.delete(userid);
 	}
 
 	@Override
-	public void UserUpdate(User user) {
+	public void update(User user) {
 		// TODO Auto-generated method stub
-		update(user);
+		super.update(user);
 	}
 
 	@Override
-	public List<User> FindAllUser() {
+	public List<User> findAll() {
 		// TODO Auto-generated method stub
-		return findAll();
+		return super.findAll();
 	}
 
 	@Override
-	public List<User> FindUserByName(String name) {
+	public List<User> findByProperty(String key,Object value) {
 		// TODO Auto-generated method stub
-		return findByProperty("name", name);
+		return super.findByProperty(key, value);
 	}
+
 
 }

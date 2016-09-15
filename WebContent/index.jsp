@@ -1,7 +1,9 @@
-<!doctype html>
-<html lang="zh">
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
-<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>大唐办公系统</title>
@@ -14,10 +16,14 @@
 		<div class="wrapper">
 			<div class="container">
 				<h1>大唐办公系统</h1>
-
+				<%
+					if(request.getAttribute("errorMsg")!=null){
+						out.println("<font style='color:red'>"+request.getAttribute("errorMsg")+"</p>");
+					}
+				%>
 				<form class="form" method="post" action="login">
-					<input type="text" placeholder="账号" name="username">
-					<input type="password" placeholder="密码" name="password">
+					<input type="text" placeholder="账号" name="username"> <input
+						type="password" placeholder="密码" name="password">
 					<div id="demo">
 						<div id="slider" style="width: 250px; margin: 0 auto">
 							<div id="slider_bg"></div>
@@ -28,24 +34,29 @@
 						<script src="js/xcConfirm.js"></script>
 						<script>
 							$(function() {
-								var flag=false;
+								var flag = false;
 								var slider = new SliderUnlock("#slider", {
 									successLabelTip : "已解锁"
 								}, function() {
 									//验证完成函数。
-									flag=true;
+									flag = true;
 								});
 								slider.init();
-								$("form").submit(function(e) {
-									if(flag){
-										return true;
-									}else{
-										var txt=  "请验证滑块";
-										window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.info);
-										return false;
-									}
-								});
-								
+								$("form")
+										.submit(
+												function(e) {
+													if (flag) {
+														return true;
+													} else {
+														var txt = "请验证滑块";
+														window.wxc
+																.xcConfirm(
+																		txt,
+																		window.wxc.xcConfirm.typeEnum.info);
+														return false;
+													}
+												});
+
 							})
 						</script>
 					</div>

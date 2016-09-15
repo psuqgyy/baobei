@@ -10,14 +10,14 @@ import com.datang.baobei.entities.User;
  */
 public interface UserDao {
 	/**增加员工**/
-	public void UserAdd(User user);
+	public void add(User user);
 	/**删除员工**/
-	public void UserDel(int userid);
+	public void delete(int userid);
 	/**更新员工**/
-	public void UserUpdate(User user);
+	public void update(User user);
 	/**查询所有员工**/
-	public List<User> FindAllUser();
-	/**根据名字查找员工**/
-	public List<User> FindUserByName(String name);
+	public List<User> findAll();
+	/**根据属性查找**/
+	public List<User> findByProperty(String key,Object value);
 	
 }

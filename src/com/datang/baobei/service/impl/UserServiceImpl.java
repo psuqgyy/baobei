@@ -16,33 +16,33 @@ public class UserServiceImpl implements UserService{
 	@Resource(name="userDao")
 	private UserDao userDao;
 	@Override
-	public void UserAdd(User user) {
+	public void add(User user) {
 		// TODO Auto-generated method stub
-		userDao.UserAdd(user);
+		userDao.add(user);
 	}
 
 	@Override
-	public void UserDel(int userid) {
+	public void delete(int userid) {
 		// TODO Auto-generated method stub
-		userDao.UserDel(userid);
+		userDao.delete(userid);
 	}
 
 	@Override
-	public void UserUpdate(User user) {
+	public void update(User user) {
 		// TODO Auto-generated method stub
-		userDao.UserUpdate(user);
+		userDao.update(user);
 	}
 
 	@Override
-	public List<User> FindAllUser() {
+	public List<User> findAll() {
 		// TODO Auto-generated method stub
-		return userDao.FindAllUser();
+		return userDao.findAll();
 	}
 
 	@Override
-	public List<User> FindUserByName(String name) {
+	public List<User> findByProperty(String key, Object value) {
 		// TODO Auto-generated method stub
-		return userDao.FindUserByName(name);
+		return userDao.findByProperty(key, value);
 	}
 
 }

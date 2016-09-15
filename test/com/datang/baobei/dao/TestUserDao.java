@@ -23,12 +23,13 @@ public class TestUserDao {
 	public void testSave(){
 		User user=new User();
 		user.setName("张三");
-		user.setPassword("asdfasdfasdf");
+		user.setUsername("psuqgyy");
+		user.setPassword("psuqgyy1");
 		user.setPhone("123123123123");
 		user.setPosition("店长");
 		user.setQq("12312123123");
-		userDao.UserAdd(user);
-		System.out.println("asdfasdfsdf");
+		userDao.add(user);
+		System.out.println("测试添加人员成功");
 	}
 	
 }

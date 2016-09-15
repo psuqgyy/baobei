@@ -10,33 +10,31 @@ import com.datang.baobei.entities.Port;
 public class PortDaoImpl extends BaseDaoImpl<Port> implements PortDao{
 
 	@Override
-	public void portSave(Port port) {
+	public void add(Port port) {
 		// TODO Auto-generated method stub
-		save(port);
+		super.save(port);
 	}
 
 	@Override
-	public void portDel(int portid) {
+	public void delete(int portid) {
 		// TODO Auto-generated method stub
-		delete(portid);
+		super.delete(portid);
 	}
 
 	@Override
-	public void portUpdate(Port port) {
+	public void update(Port port) {
 		// TODO Auto-generated method stub
-		update(port);
+		super.update(port);
 	}
 
 	@Override
-	public List<Port> findPortByNumber(String name) {
+	public List<Port> findAll() {
 		// TODO Auto-generated method stub
-		return findByProperty("name", name);
+		return super.findAll();
 	}
-
 	@Override
-	public List<Port> findAllPorts() {
+	public List<Port> findByProperty(String name, Object value) {
 		// TODO Auto-generated method stub
-		return findAll();
+		return super.findByProperty(name, value);
 	}
-
 }

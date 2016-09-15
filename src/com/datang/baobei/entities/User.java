@@ -30,6 +30,8 @@ public class User {
 	private String name;
 	/**手机号-登录账号*/
 	private String phone;
+	/**员工账号*/
+	private String username;
 	/**密码*/
 	private String password;
 	/**QQ号*/
@@ -63,6 +65,12 @@ public class User {
 		this.name = name;
 	}
 	
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
 	public String getPhone() {
 		return phone;
 	}
