@@ -1,5 +1,6 @@
 package com.datang.baobei.entities;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -41,11 +42,12 @@ public class User {
 	private String position;
 	/**员工所在店铺*/
 	@ManyToOne
-	@JoinColumn(name = "store_id")  
-	private Group group;
+	@JoinColumn(name = "team_id")  
+	private Team team;
 	/**一个员工有多个端口号**/
 	@OneToMany(fetch=FetchType.EAGER)
-	private Set<Port> ports;
+	@JoinColumn(name = "user_id")  
+	private Set<Port> ports=new HashSet<Port>();;
 	
 	public Set<Port> getPorts() {
 		return ports;
@@ -96,11 +98,11 @@ public class User {
 	public void setPosition(String position) {
 		this.position = position;
 	}
-	public Group getGroup() {
-		return group;
+	public Team getteam() {
+		return team;
 	}
-	public void setGroup(Group group) {
-		this.group = group;
+	public void setteam(Team team) {
+		this.team = team;
 	}
 	
 }

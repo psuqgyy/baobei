@@ -1,5 +1,6 @@
 package com.datang.baobei.entities;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -11,6 +12,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.sun.org.apache.bcel.internal.generic.NEW;
 
 
 /**
@@ -33,7 +36,7 @@ public class Store {
 	private String region;
 	@OneToMany
 	@JoinColumn(name="store_id")
-	private Set<Group> groups;
+	private Set<Team> teams = new HashSet<Team>();
 	public int getId() {
 		return id;
 	}
@@ -52,12 +55,10 @@ public class Store {
 	public void setRegion(String region) {
 		this.region = region;
 	}
-	public Set<Group> getGroups() {
-		return groups;
+	public Set<Team> getTeams() {
+		return teams;
 	}
-	public void setGroups(Set<Group> groups) {
-		this.groups = groups;
+	public void setTeams(Set<Team> teams) {
+		this.teams = teams;
 	}
-
-	
 }

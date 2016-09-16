@@ -2,23 +2,23 @@ package com.datang.baobei.service;
 
 import java.util.List;
 
-import com.datang.baobei.entities.Group;
+import com.datang.baobei.entities.Team;
 
 /**
  * 小组操作服务层
  * @author Administrator
  *
  */
-public interface GroupService {
+public interface TeamService {
 
 	/**增加小组**/
-	public void add(Group group);
+	public void add(Team team);
 	/**删除小组**/
-	public void delete(int groupid);
+	public void delete(int teamid);
 	/**更新小组**/
-	public void update(Group group);
+	public void update(Team team);
 	/**查询所有小组**/
-	public List<Group> findAll();
+	public List<Team> findAll();
 	/**根据属性小组**/
-	public List<Group> findByProperty(String key,Object value);
+	public List<Team> findByProperty(String key,Object value);
 }

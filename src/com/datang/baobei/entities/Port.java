@@ -1,6 +1,7 @@
 package com.datang.baobei.entities;
 
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -14,6 +15,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.sun.org.apache.bcel.internal.generic.NEW;
 
 /**
  * 端口(58,赶集，安居客)
@@ -45,8 +48,9 @@ public class Port {
 	@ManyToOne
 	@JoinColumn(name = "user_id")  
 	private User user;
-	@OneToMany(mappedBy="port")
-	private Set<Fangyuan> fangyuans;
+	@OneToMany
+	@JoinColumn(name = "port_id")  
+	private Set<Fangyuan> fangyuans = new HashSet<Fangyuan>();
 	
 	public String getIphone() {
 		return iphone;

@@ -1,11 +1,9 @@
 package com.datang.baobei.controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.Resource;
-import javax.jws.soap.SOAPBinding.Use;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -17,13 +15,10 @@ import org.springframework.stereotype.Controller;
  */
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.datang.baobei.entities.User;
 import com.datang.baobei.service.UserService;
-import com.sun.corba.se.impl.protocol.giopmsgheaders.RequestMessage;
 
 @Controller
 public class UserHandel {
@@ -34,7 +29,7 @@ public class UserHandel {
 	@ResponseBody
 	public List<User> findAllUser(HttpServletRequest request,HttpServletResponse response) throws IOException {
 		System.out.println("findAllUser");
-		List<User> users=userService.findByProperty("name", "张三");
+		List<User> users=userService.findByProperty("name", "张三1号");
 		return users;
 	}
 

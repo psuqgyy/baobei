@@ -1,5 +1,6 @@
 package com.datang.baobei.entities;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -17,8 +18,8 @@ import javax.persistence.Table;
  *
  */
 @Entity
-@Table(name="group")
-public class Group {
+@Table(name="team")
+public class Team {
 
 	/**ID**/
 	@Id
@@ -28,10 +29,11 @@ public class Group {
 	private String name;
 	/**小组所有的员工**/
 	@OneToMany
-	@JoinColumn(name="group_id")
-	private Set<User> users;
+	@JoinColumn(name="team_id")
+	private Set<User> users =new HashSet<User>();
 	/**小组所在的店铺**/
 	@ManyToOne
+	@JoinColumn(name = "store_id")  
 	private Store store;
 	public int getId() {
 		return id;

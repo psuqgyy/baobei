@@ -5,36 +5,36 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import com.datang.baobei.dao.GroupDao;
-import com.datang.baobei.entities.Group;
-@Repository("groupDao")
-public class GroupDaoImpl extends BaseDaoImpl<Group> implements GroupDao{
+import com.datang.baobei.dao.TeamDao;
+import com.datang.baobei.entities.Team;
+@Repository("teamDao")
+public class TeamDaoImpl extends BaseDaoImpl<Team> implements TeamDao{
 	
 	@Override
-	public void add(Group group) {
+	public void add(Team team) {
 		// TODO Auto-generated method stub
-		super.save(group);
+		super.save(team);
 	}
 
 	@Override
-	public void delete(int groupid) {
+	public void delete(int teamid) {
 		// TODO Auto-generated method stub
-		super.delete(groupid);
+		super.delete(teamid);
 	}
 
 	@Override
-	public void update(Group group) {
+	public void update(Team team) {
 		// TODO Auto-generated method stub
-		super.update(group);
+		super.update(team);
 	}
 	@Override
-	public List<Group> findByProperty(String name, Object value) {
+	public List<Team> findByProperty(String name, Object value) {
 		// TODO Auto-generated method stub
 		return super.findByProperty(name, value);
 	}
 	
 	@Override
-	public List<Group> findAll() {
+	public List<Team> findAll() {
 		// TODO Auto-generated method stub
 		return super.findAll();
 	}

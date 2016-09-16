@@ -13,7 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.transaction.TransactionConfiguration;
 
-import com.datang.baobei.entities.Group;
+import com.datang.baobei.entities.Team;
 import com.datang.baobei.entities.Store;
 import com.datang.baobei.entities.User;
 
@@ -28,13 +28,15 @@ public class TestDao {
 	@Resource(name="storeDao")
 	private StoreDao storeDao;
 
+	@Resource(name="teamDao")
+	private TeamDao teamDao;
 
 	@Test
 	public void testSave() {
 		Store store = new Store();
 		store.setName("A区");
 		store.setRegion("双流区");
-		Set<Group> groups = new HashSet<Group>();
+		Set<Team> teams = new HashSet<Team>();
 		for (int i = 0; i < 10; i++) {
 			Set<User> users = new HashSet<User>();
 			for (int j = 0; j < 10; j++) {
@@ -47,13 +49,16 @@ public class TestDao {
 				user.setQq("12312123123");
 				userDao.add(user);
 				users.add(user);
+				userDao.add(user);
 			}
-			Group group = new Group();
-			group.setName(i + "小组");
-			group.setStore(store);
-			group.setUser(users);
+			Team team = new Team();
+			team.setName(i + "小组");
+			team.setStore(store);
+			team.setUser(users);
+			teams.add(team);
+			teamDao.add(team);
 		}
-		store.setGroups(groups);
+		store.setTeams(teams);
 		storeDao.add(store);
 		System.out.println("测试添加人员成功");
 	}

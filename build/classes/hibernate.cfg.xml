@@ -14,7 +14,7 @@
 		<property name="hibernate.format_sql">true</property>
 
 		<!-- 生成数据标的方法 -->
-		<property name="hibernate.hbm2ddl.auto">create</property>
+		<property name="hibernate.hbm2ddl.auto">update</property>
 
 		<!-- 配置启用二级缓存 -->
 		<property name="hibernate.cache.use_second_level_cache">true</property>
@@ -36,7 +36,7 @@
 		<!-- 配置对于那些类启用的二级缓存 <class-cache usage="read-write" class=""/> -->
 		<mapping class="com.datang.baobei.entities.User" />
 		<mapping class="com.datang.baobei.entities.Store" />
-		<mapping class="com.datang.baobei.entities.Group" />
+		<mapping class="com.datang.baobei.entities.Team" />
 		<mapping class="com.datang.baobei.entities.Port" />
 		<mapping class="com.datang.baobei.entities.Fangyuan" />
 	</session-factory>

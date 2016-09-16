@@ -6,43 +6,43 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
-import com.datang.baobei.dao.GroupDao;
-import com.datang.baobei.entities.Group;
-import com.datang.baobei.service.GroupService;
-@Service("groupService")
-public class GroupServiceImpl implements GroupService{
+import com.datang.baobei.dao.TeamDao;
+import com.datang.baobei.entities.Team;
+import com.datang.baobei.service.TeamService;
+@Service("teamService")
+public class TeamServiceImpl implements TeamService{
 
-	@Resource(name="groupDao")
-	private GroupDao groupDao;
+	@Resource(name="teamDao")
+	private TeamDao teamDao;
 	@Override
-	public void add(Group group) {
+	public void add(Team team) {
 		// TODO Auto-generated method stub
-		groupDao.add(group);
+		teamDao.add(team);
 	}
 
 	@Override
-	public void delete(int groupid) {
+	public void delete(int teamid) {
 		// TODO Auto-generated method stub
-		groupDao.delete(groupid);
+		teamDao.delete(teamid);
 		
 	}
 
 	@Override
-	public void update(Group group) {
+	public void update(Team team) {
 		// TODO Auto-generated method stub
-		groupDao.update(group);
+		teamDao.update(team);
 	}
 
 	@Override
-	public List<Group> findAll() {
+	public List<Team> findAll() {
 		// TODO Auto-generated method stub
-		return groupDao.findAll();
+		return teamDao.findAll();
 	}
 
 	@Override
-	public List<Group> findByProperty(String key, Object value) {
+	public List<Team> findByProperty(String key, Object value) {
 		// TODO Auto-generated method stub
-		return groupDao.findByProperty(key, value);
+		return teamDao.findByProperty(key, value);
 	}
 
 }
