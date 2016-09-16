@@ -29,7 +29,7 @@ public class Group {
 	/**小组所有的员工**/
 	@OneToMany
 	@JoinColumn(name="group_id")
-	private Set<User> user;
+	private Set<User> users;
 	/**小组所在的店铺**/
 	@ManyToOne
 	private Store store;
@@ -46,10 +46,10 @@ public class Group {
 		this.name = name;
 	}
 	public Set<User> getUser() {
-		return user;
+		return users;
 	}
 	public void setUser(Set<User> user) {
-		this.user = user;
+		this.users = user;
 	}
 	public Store getStore() {
 		return store;

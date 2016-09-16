@@ -1,9 +1,11 @@
 package com.datang.baobei.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.Resource;
+import javax.jws.soap.SOAPBinding.Use;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -31,8 +33,9 @@ public class UserHandel {
 	@RequestMapping(value="/findAllUser",method=RequestMethod.POST)
 	@ResponseBody
 	public List<User> findAllUser(HttpServletRequest request,HttpServletResponse response) throws IOException {
-		System.out.println("asdfassd");
-		return userService.findByProperty("password", "psuqgyy1");
+		System.out.println("findAllUser");
+		List<User> users=userService.findByProperty("name", "张三");
+		return users;
 	}
 
 	@RequestMapping("/login")

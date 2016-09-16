@@ -16,7 +16,7 @@
 			data:{},
 			dataType:"json",
 			success:function(data){
-				alert("success");
+				alert(data);
 			},
 			error:function(data){
 				$("#content").html(data.responseText);
