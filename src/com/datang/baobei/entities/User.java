@@ -14,6 +14,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 
 /**
  * 员工信息
@@ -22,6 +24,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name="user")
+@JsonIgnoreProperties(value={"team","ports"})
 public class User {
 	/**ID*/
 	@Id

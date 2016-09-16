@@ -29,7 +29,7 @@
 							<div id="slider_bg"></div>
 							<span id="label">>></span> <span id="labelTip">拖动滑块验证</span>
 						</div>
-						<script src="js/jquery-3.1.0.js"></script>
+						<script src="js/jquery.min.js"></script>
 						<script src="js/jquery.slideunlock.js"></script>
 						<script src="js/xcConfirm.js"></script>
 						<script>

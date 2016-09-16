@@ -39,5 +39,7 @@
 		<mapping class="com.datang.baobei.entities.Team" />
 		<mapping class="com.datang.baobei.entities.Port" />
 		<mapping class="com.datang.baobei.entities.Fangyuan" />
+		<mapping class="com.datang.baobei.entities.FirstAuthority" />
+		<mapping class="com.datang.baobei.entities.SecondAuthority" />
 	</session-factory>
 </hibernate-configuration>
